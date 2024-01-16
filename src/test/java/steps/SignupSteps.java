@@ -12,7 +12,6 @@ import support.ScreenshotUtils;
 public class SignupSteps extends RunCucumberTest {
     CreateAccountPage createAccountPage = new CreateAccountPage();
     LoginSignupPage loginSignupPage= new LoginSignupPage();
-    HomePage homePage = new HomePage();
 
     @And("the user enters their name and email on the signup section")
     public void signupData() {
