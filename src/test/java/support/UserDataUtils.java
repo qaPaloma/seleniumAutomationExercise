@@ -4,7 +4,7 @@ import org.apache.commons.lang3.RandomStringUtils;
 import runner.RunCucumberTest;
 import java.util.Random;
 
-public class Utils extends RunCucumberTest {
+public class UserDataUtils extends RunCucumberTest {
 
     //Methods created to generate random data for forms
 

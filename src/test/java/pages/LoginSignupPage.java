@@ -3,7 +3,7 @@ package pages;
 import org.openqa.selenium.By;
 import runner.RunBase;
 import static support.Commands.*;
-import static support.Utils.*;
+import static support.UserDataUtils.*;
 import static pages.CreateAccountPage.*;
 
 public class LoginSignupPage extends RunBase {

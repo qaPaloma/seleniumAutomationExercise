@@ -25,6 +25,6 @@
 
       Examples:
       | email                          | password            | message                                        | name                               |
-      | invalidEmail                   | test@Selenium123    | Your email or password is incorrect!           | using the wrong email              |
+      | invalidEmail@email.com         | test@Selenium123    | Your email or password is incorrect!           | using the wrong email              |
       | testUser@test.com.br           | invalidPassword     | Your email or password is incorrect!           | using the wrong password           |
-      | invalidEmail                   | invalidPassword     | Your email or password is incorrect!           | using the wrong email and password |
+      | invalidEmail@email.com         | invalidPassword     | Your email or password is incorrect!           | using the wrong email and password |

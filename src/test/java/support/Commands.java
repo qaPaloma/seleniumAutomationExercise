@@ -56,7 +56,7 @@ public class Commands extends RunCucumberTest {
 
     /*---------*/
     public static void selectOption(By element1, By element2){
-        String option = String.valueOf(Utils.getRandomNumber(2, 3));
+        String option = String.valueOf(UserDataUtils.getRandomNumber(2, 3));
         System.out.println(option);
         switch (option) {
             case "1":
