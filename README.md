@@ -58,7 +58,16 @@ The default WebDriver for this project is Chrome. To change it:
 
 0.34.0
 
+## Reports
 
+- Cluecumber 2.9.4
+- Maven Surefire: 3.2.5
+
+On the terminal, type:
+
+`mvn test -Dtest=RunCucumberTest -Dbrowser=chrome cluecumber-report:reporting`
+
+You can change the browser to "firefox" or "edge".
 
 ## Tests
 
