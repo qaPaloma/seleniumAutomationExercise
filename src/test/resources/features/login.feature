@@ -13,7 +13,7 @@
 
     @login-success
     Scenario: User can successfully log in to the website
-      When the user enters their email "testUser@testERROR.com.br" and password "test@Selenium123" on the login section
+      When the user enters their email "testUser@test.com.br" and password "test@Selenium123" on the login section
       And clicks on the login button
       Then the user is logged to the website
 
