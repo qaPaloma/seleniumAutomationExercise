@@ -26,22 +26,29 @@ public class Commands extends RunCucumberTest {
 
     /*---------*/
     public static void clickButton(By element) {
+        System.out.println("##########################");
+        System.out.println("Will click on the " + element + " button");
         try {
             waitClickable(element);
             getDriver().findElement(element).click();
+            System.out.println("The " + element + " button was clicked");
         } catch (Exception error) {
             System.out.println("**** An error occurred when trying to click the " + element);
         }
+        System.out.println("##########################");
     }
 
     /*---------*/
     public static void fillField(By element, String value) {
+        System.out.println("##########################");
+        System.out.println("Will fill the " + element + " field with " + value);
         try {
             waitElement(element);
             getDriver().findElement(element).sendKeys(value);
         } catch (Exception error) {
             System.out.println("**** An error occurred when trying to fill in the field " + element);
         }
+        System.out.println("##########################");
     }
 
     /*---------*/
@@ -56,6 +63,8 @@ public class Commands extends RunCucumberTest {
 
     /*---------*/
     public static void selectOption(By element1, By element2){
+        System.out.println("##########################");
+        System.out.println("Will select an option");
         String option = String.valueOf(UserDataUtils.getRandomNumber(2, 3));
         System.out.println(option);
         switch (option) {
@@ -70,11 +79,14 @@ public class Commands extends RunCucumberTest {
             default:
                 System.out.println("**** Element not found");
         }
+        System.out.println("##########################");
     }
 
     /*---------*/
     public static void dismissIFrame(By element1, By  element2){
         getWait();
+        System.out.println("##########################");
+        System.out.println("Will try to locate and dismiss add");
         try {
             getWait();
             getDriver().switchTo().frame(getDriver().findElement(element1));
