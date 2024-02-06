@@ -82,3 +82,11 @@ On the terminal, type:
     - Successful signup
     - Signup with existing user
 - Delete account
+
+## GitHub Actions
+
+- [Checkout](https://github.com/marketplace/actions/checkout)
+- [Setup Java JDK](https://github.com/marketplace/actions/setup-java-jdk)
+- [Setup Chrome](https://github.com/marketplace/actions/setup-chrome)
+- [setup-chromedriver](https://github.com/marketplace/actions/setup-chromedriver)
+
