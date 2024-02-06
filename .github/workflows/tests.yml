@@ -31,3 +31,12 @@ jobs:
 
       - name: Run tests
         run: mvn test -Dtest=RunCucumberTest -Dbrowser=chrome-headless
+
+      - name: Generate reports
+        run: mvn cluecumber-report:reporting
+
+      - name: File report artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: report-tests
+          path: '**/formated-report/'

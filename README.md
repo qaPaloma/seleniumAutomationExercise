@@ -89,4 +89,5 @@ On the terminal, type:
 - [Setup Java JDK](https://github.com/marketplace/actions/setup-java-jdk)
 - [Setup Chrome](https://github.com/marketplace/actions/setup-chrome)
 - [setup-chromedriver](https://github.com/marketplace/actions/setup-chromedriver)
+- [Upload a Build Artifact](https://github.com/marketplace/actions/upload-a-build-artifact)
 
