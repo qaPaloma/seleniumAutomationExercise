@@ -27,7 +27,7 @@ public class Commands extends RunCucumberTest {
     /*---------*/
     public static void clickButton(By element) {
         System.out.println("##########################");
-        System.out.println("Will click on the " + element + " button");
+        System.out.println("Will click on the button");
         try {
             waitClickable(element);
             getDriver().findElement(element).click();
@@ -35,20 +35,18 @@ public class Commands extends RunCucumberTest {
         } catch (Exception error) {
             System.out.println("**** An error occurred when trying to click the " + element);
         }
-        System.out.println("##########################");
     }
 
     /*---------*/
     public static void fillField(By element, String value) {
         System.out.println("##########################");
-        System.out.println("Will fill the " + element + " field with " + value);
+        System.out.println("Will fill a field with a value");
         try {
             waitElement(element);
             getDriver().findElement(element).sendKeys(value);
         } catch (Exception error) {
             System.out.println("**** An error occurred when trying to fill in the field " + element);
         }
-        System.out.println("##########################");
     }
 
     /*---------*/
@@ -79,7 +77,6 @@ public class Commands extends RunCucumberTest {
             default:
                 System.out.println("**** Element not found");
         }
-        System.out.println("##########################");
     }
 
     /*---------*/
