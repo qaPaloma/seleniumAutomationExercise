@@ -40,10 +40,10 @@ public class DeleteAccountSteps extends RunCucumberTest {
     @And("the user can no longer log in to the website")
     public void loginAttempt(){
         HomePage.clickSignupLoginButton();
+
         loginSignupPage.tryLoginWithDeleteAccount();
         loginSignupPage.clickLoginButton();
     }
-
 
     @After
     public static void takeScreenshotWhenTestFails(Scenario scenario){

@@ -12,6 +12,7 @@ import static pages.HomePage.*;
 public class CreateAccountPage extends RunBase {
 
     //region constants
+    public static final String URL = "https://automationexercise.com/login";
     private final By TITLE_MR_FIELD = By.id("id_gender1");
     private final By TITLE_MRS_FIELD = By.id("id_gender2");
     private static final By PASSWORD_FIELD = By.id("password");
@@ -37,6 +38,10 @@ public class CreateAccountPage extends RunBase {
     private final By EMAIL_ACTUAL = By.id("email");
     public static final String GET_PASSWORD = getRandomPassword();
     //endregion
+
+    public static void openPage() {
+        enterWebPage(URL);
+    }
 
     public void pageCheck() {
         checkElementIsDisplayed(CREATE_ACCOUNT_BUTTON);

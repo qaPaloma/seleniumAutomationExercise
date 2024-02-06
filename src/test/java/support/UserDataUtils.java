@@ -41,8 +41,7 @@ public class UserDataUtils extends RunCucumberTest {
 
     /*---------*/
     public static String getRandomEmail(){
-        String emailStart = "test+";
-        String emailEnd = "@test.com";
+        String emailStart = "test+", emailEnd = "@test.com";
         int number = getRandomNumber(1,9999999);
 
         return emailStart + number + emailEnd;
@@ -51,9 +50,9 @@ public class UserDataUtils extends RunCucumberTest {
     /*---------*/
     public static String getRandomPassword(){
 
-        String uppercase = RandomStringUtils.randomAlphabetic(2);
-        String lowercase = RandomStringUtils.randomAlphabetic(2).toLowerCase();
-        String number = getRandomNumber(2);
+        String uppercase = RandomStringUtils.randomAlphabetic(2),
+                lowercase = RandomStringUtils.randomAlphabetic(2).toLowerCase(),
+                number = getRandomNumber(2);
 
         return uppercase + lowercase + number;
     }

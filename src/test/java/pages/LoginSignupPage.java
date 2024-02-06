@@ -9,7 +9,7 @@ import static pages.CreateAccountPage.*;
 public class LoginSignupPage extends RunBase {
 
     //region constants
-    public final String URL = "https://automationexercise.com/login";
+    public static final String URL = "https://automationexercise.com/login";
     private final By LOGIN_EMAIL_FIELD = By.xpath("//*[@id=\"form\"]/div/div/div[1]/div/form/input[2]");
     private final By PASSWORD_FIELD = By.xpath("//*[@id=\"form\"]/div/div/div[1]/div/form/input[3]");
     private static final By LOGIN_BUTTON = By.xpath("//*[@id=\"form\"]/div/div/div[1]/div/form/button");

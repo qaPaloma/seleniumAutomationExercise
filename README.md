@@ -37,7 +37,7 @@ All WebDrivers used in this project were added to the repository, inside:
 
 `seleniumProjectDemoQA\drivers`
 
-When executing the tests, you may have to update them depending on your browser's version. To do that, download the new version using the links down below and replace the file in the drivers directory.
+When executing the tests, you may have to update them depending on your browser's version. To do that, download the new version using the links down below and replace the file in the drivers' directory.
 
 The default WebDriver for this project is Chrome. To change it:
 - Go Run/Debug configuration 
@@ -65,16 +65,20 @@ The default WebDriver for this project is Chrome. To change it:
 
 On the terminal, type:
 
-`mvn test -Dtest=RunCucumberTest -Dbrowser=chrome cluecumber-report:reporting`
+`mvn test -Dtest=RunCucumberTest -Dbrowser=BROWSER_NAME cluecumber-report:reporting`
 
-You can change the browser to "firefox" or "edge".
+##### BROWSER_NAME:
+- "chrome"
+- "firefox"
+- "edge"
+- "chrome-headless" (executes without opening the browser)
 
 ## Tests
 
 - Login
-    - Successfull login, logout
+    - Successful login, logout
     - Login fail
 - Signup
-    - Successfull signup
+    - Successful signup
     - Signup with existing user
 - Delete account

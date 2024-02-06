@@ -74,7 +74,9 @@ public class Commands extends RunCucumberTest {
 
     /*---------*/
     public static void dismissIFrame(By element1, By  element2){
+        getWait();
         try {
+            getWait();
             getDriver().switchTo().frame(getDriver().findElement(element1));
             getDriver().findElement(element2).click();
             getDriver().switchTo().defaultContent();

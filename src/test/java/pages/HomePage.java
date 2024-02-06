@@ -23,10 +23,15 @@ public class HomePage extends RunBase {
     private static final By ACCOUNT_CREATED_TEXT_ACTUAL = By.xpath("//*[@id=\"form\"]/div/div/div/h2/b");
     private final By USER_IS_LOGGED = By.xpath("//*[@id=\"header\"]/div/div/div/div[2]/div/ul/li[10]/a");
     private static final By CONTINUE_BUTTON = By.xpath("//*[@id=\"form\"]/div/div/div/div/a");
+    private static final By HOME_BUTTON = By.xpath("//*[@id=\"header\"]/div/div/div/div[2]/div/ul/li[1]/a");
     //endregion
 
     public static void openPage() {
         enterWebPage(URL);
+    }
+
+    public static void homePageButton(){
+        clickButton(HOME_BUTTON);
     }
 
     public void pageCheck() {
@@ -48,7 +53,7 @@ public class HomePage extends RunBase {
     public void deleteConfirmation() {
         checkElementIsCorrect(
                 ACCOUNT_DELETED_TEXT_ACTUAL, ACCOUNT_DELETED_TEXT_EXPECTED);
-        clickButton(DELETE_BUTTON);
+        clickButton(CONTINUE_BUTTON);
     }
 
     public static void accountCreatedConfirmation() {

@@ -93,7 +93,7 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.2.5</version>
                 <configuration>
-                    <testFailureIgnore>true</testFailureIgnore>
+                    <testFailureIgnore>false</testFailureIgnore>
                 </configuration>
             </plugin>
 
@@ -111,8 +111,8 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <sourceJsonReportDirectory>target/cucumber-report</sourceJsonReportDirectory>
-                    <generatedHtmlReportDirectory>target/generated-report</generatedHtmlReportDirectory>
+                    <sourceJsonReportDirectory>target/cucumber</sourceJsonReportDirectory>
+                    <generatedHtmlReportDirectory>target/cucumber</generatedHtmlReportDirectory>
                 </configuration>
             </plugin>
 
