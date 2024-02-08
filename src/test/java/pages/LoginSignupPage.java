@@ -38,13 +38,6 @@ public class LoginSignupPage extends RunBase {
         fillField(PASSWORD_FIELD, password);
     }
 
-    public void tryLoginWithDeleteAccount() {
-        fillField(LOGIN_EMAIL_FIELD, storeEmail());
-        fillField(PASSWORD_FIELD, GET_PASSWORD);
-        clickLoginButton();
-        checkElementIsDisplayed(ERROR_MESSAGE);
-    }
-
     public void clickLoginButton() {
         clickButton(LOGIN_BUTTON);
     }

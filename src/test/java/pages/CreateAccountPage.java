@@ -7,7 +7,6 @@ import runner.RunBase;
 import static support.Commands.*;
 import static support.UserDataUtils.*;
 import static pages.LoginSignupPage.*;
-import static pages.HomePage.*;
 
 public class CreateAccountPage extends RunBase {
 
@@ -38,10 +37,6 @@ public class CreateAccountPage extends RunBase {
     private final By EMAIL_ACTUAL = By.id("email");
     public static final String GET_PASSWORD = getRandomPassword();
     //endregion
-
-    public static void openPage() {
-        enterWebPage(URL);
-    }
 
     public void pageCheck() {
         checkElementIsDisplayed(CREATE_ACCOUNT_BUTTON);
@@ -159,18 +154,6 @@ public class CreateAccountPage extends RunBase {
         addCity();
         addZipcode();
         addMobileNumber();
-    }
-
-    public void completeSignup() {
-        openPage();
-        clickSignupLoginButton();
-        pageCheck();
-        addName();
-        addSignupEmail();
-        clickSignupButton();
-        addUserData();
-        clickCreateButton();
-        HomePage.accountCreatedConfirmation();
     }
 
 }
