@@ -2,7 +2,7 @@ name: Scheduled Tests - PR
 
 on:
   schedule:
-    - cron: '15 2,11,19 * * MON-FRI'
+    - cron: '15 2,11 * * MON-FRI'
 
 #Cron syntax has five fields separated by a space, and each field represents a unit of time.
 #minute (0-59) / hour (0-23) / day (1-31) / month (1-12 or JAN-DEC) / day week (0-6 or SUN-SAT)
