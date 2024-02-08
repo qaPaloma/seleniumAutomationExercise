@@ -9,9 +9,19 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
+        <java.version>20</java.version>
+        <!-- MAVEN COMPILER -->
         <maven.compiler.source>20</maven.compiler.source>
-        <maven.compiler.target>20</maven.compiler.target>
+        <maven.compiler.source>20</maven.compiler.source>
+        <maven.compiler.version>3.11.0</maven.compiler.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!--  -->
+        <selenium.version>4.16.1</selenium.version>
+        <slf4j.version>2.0.9</slf4j.version>
+        <apache.version>3.14.0</apache.version>
+        <cucumber.version>7.15.0</cucumber.version>
+        <surefire.version>3.2.5</surefire.version>
+        <trivago.version>2.9.4</trivago.version>
     </properties>
 
     <dependencies>
@@ -20,41 +30,41 @@
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
-            <version>4.16.1</version>
+            <version>${selenium.version}</version>
         </dependency>
 
         <!-- SLF4J -->
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
-            <version>2.0.9</version>
+            <version>${slf4j.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-simple</artifactId>
-            <version>2.0.9</version>
+            <version>${slf4j.version}</version>
         </dependency>
 
         <!-- APACHE COMMONS LANG -->
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
-            <version>3.14.0</version>
+            <version>${apache.version}</version>
         </dependency>
 
         <!-- CUCUMBER -->
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-junit</artifactId>
-            <version>7.15.0</version>
+            <version>${cucumber.version}</version>
             <scope>test</scope>
         </dependency>
 
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-java</artifactId>
-            <version>7.15.0</version>
+            <version>${cucumber.version}</version>
         </dependency>
 
         <!-- REPORTS -->
@@ -62,13 +72,13 @@
         <dependency>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-surefire-plugin</artifactId>
-            <version>3.2.5</version>
+            <version>${surefire.version}</version>
         </dependency>
 
         <dependency>
             <groupId>com.trivago.rta</groupId>
             <artifactId>cluecumber-report-plugin</artifactId>
-            <version>2.9.4</version>
+            <version>${trivago.version}</version>
         </dependency>
     </dependencies>
 
@@ -77,11 +87,11 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.11.0</version>
+                <version>${maven.compiler.version}</version>
                 <configuration>
-                    <encoding>UTF-8</encoding>
-                    <source>20</source>
-                    <target>20</target>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                    <source>${maven.compiler.source}</source>
+                    <target>${maven.compiler.source}</target>
                     <includes>
                         <include>src/test/java</include>
                     </includes>
@@ -91,7 +101,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.2.5</version>
+                <version>${surefire.version}</version>
                 <configuration>
                     <testFailureIgnore>false</testFailureIgnore>
                 </configuration>
@@ -100,7 +110,7 @@
             <plugin>
                 <groupId>com.trivago.rta</groupId>
                 <artifactId>cluecumber-report-plugin</artifactId>
-                <version>2.9.4</version>
+                <version>${trivago.version}</version>
                 <executions>
                     <execution>
                         <id>report</id>
@@ -115,7 +125,6 @@
                     <generatedHtmlReportDirectory>target/formated-report</generatedHtmlReportDirectory>
                 </configuration>
             </plugin>
-
         </plugins>
     </build>
 </project>

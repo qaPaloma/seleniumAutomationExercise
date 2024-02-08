@@ -63,16 +63,16 @@ public class Commands extends RunCucumberTest {
     public static void selectOption(By element1, By element2){
         System.out.println("##########################");
         System.out.println("Will select an option");
-        String option = String.valueOf(UserDataUtils.getRandomNumber(2, 3));
-        System.out.println(option);
+        String option = String.valueOf(UserDataUtils.getRandomNumber(1, 2));
+        System.out.println("Selected option " + option);
         switch (option) {
             case "1":
                 clickButton(element1);
-                String selected1 = element1.toString();
+                //String selected1 = element1.toString();
                 break;
             case "2":
                 clickButton(element2);
-                String selected2 = element2.toString();
+                //String selected2 = element2.toString();
                 break;
             default:
                 System.out.println("**** Element not found");
@@ -81,12 +81,12 @@ public class Commands extends RunCucumberTest {
 
     /*---------*/
     public static void dismissIFrame(By element1, By  element2){
-        getWait();
         System.out.println("##########################");
         System.out.println("Will try to locate and dismiss add");
         try {
-            getWait();
+            waitElement(element1);
             getDriver().switchTo().frame(getDriver().findElement(element1));
+            waitElement(element2);
             getDriver().findElement(element2).click();
             getDriver().switchTo().defaultContent();
         } catch (Exception error) {
@@ -122,13 +122,6 @@ public class Commands extends RunCucumberTest {
         assert elementDisplayed.isDisplayed() : "**** Element is not displayed";
     }
 
-    /*---------*/
-    public static void checkPageTitle (String elementExpected){
-        String elementActual = getDriver().getTitle();
-        Assert.assertEquals(elementExpected, elementActual);
-    }
-
-    /*---------*/
     public static boolean elementException(By element) {
         try {
             WebElement elementDisplayed = getDriver().findElement(element);

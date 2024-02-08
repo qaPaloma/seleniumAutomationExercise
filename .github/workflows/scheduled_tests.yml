@@ -1,0 +1,48 @@
+name: Scheduled Tests - PR
+
+on:
+  schedule:
+    - cron: '15 2,11,19 * * MON-FRI'
+
+#Cron syntax has five fields separated by a space, and each field represents a unit of time.
+#minute (0-59) / hour (0-23) / day (1-31) / month (1-12 or JAN-DEC) / day week (0-6 or SUN-SAT)
+#UTC
+
+jobs:
+  RunTest:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clone project
+        uses: actions/checkout@v4
+
+      - name: Install Java 20
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'oracle'
+          java-version: '20.0.2'
+          cache: 'maven'
+
+      - name: Install Chrome
+        uses: browser-actions/setup-chrome@latest
+
+      - name: Install Chrome Driver
+        uses: actions/checkout@v2
+      - run: |
+          export DISPLAY=:99
+          chromedriver --url-base=/wd/hub &
+          sudo Xvfb -ac :99 -screen 0 1280x1024x24 > /dev/null 2>&1 & # optional  
+
+      - name: Run tests
+        run: mvn test -Dtest=RunCucumberTest -Dbrowser=chrome-headless
+
+      - name: Generate reports
+        if: always()
+        run: mvn cluecumber-report:reporting
+
+      - name: File report artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: report-tests
+          path: '**/formated-report/'

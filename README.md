@@ -81,7 +81,6 @@ On the terminal, type:
 - Signup
     - Successful signup
     - Signup with existing user
-- Delete account
 
 ## GitHub Actions
 
