@@ -1,4 +1,4 @@
-name: Scheduled Tests - PR
+name: Scheduled Regression Test - PR
 
 on:
   schedule:
@@ -34,7 +34,7 @@ jobs:
           sudo Xvfb -ac :99 -screen 0 1280x1024x24 > /dev/null 2>&1 & # optional  
 
       - name: Run tests
-        run: mvn test -Dtest=RunCucumberTest -Dbrowser=chrome-headless
+        run: mvn test -Dtest=RunCucumberTest -Dbrowser=chrome-headless -Dcucumber.filter.tags="~@ignore"
 
       - name: Generate reports
         if: always()
