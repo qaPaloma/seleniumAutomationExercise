@@ -63,5 +63,4 @@ jobs:
           SLACK_MESSAGE: 'PR test execution failed :fire:'
           SLACK_ICON: https://cdn-icons-png.flaticon.com/512/13513/13513643.png
           SLACK_TITLE: Smoke tests were executed
-
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
