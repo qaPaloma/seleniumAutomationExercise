@@ -42,3 +42,26 @@ jobs:
         with:
           name: report-tests
           path: '**/formated-report/'
+
+      - name: Send notification to Slack - Success
+        if: ${{ success() }}
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_COLOR: ${{ job.status }}
+          SLACK_USERNAME: qaBot
+          SLACK_MESSAGE: 'Successful execution of PR tests :white_check_mark:'
+          SLACK_TITLE: Smoke tests were executed
+          SLACK_ICON: https://www.flaticon.com/free-icon/robot_13513628?related_id=13513628.png
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+
+      - name: Send notification to Slack - Fail
+        if: ${{ failure() }}
+        uses: rtCamp/action-slack-notify@v2
+        env:
+          SLACK_COLOR: ${{ job.status }}
+          SLACK_USERNAME: qaBot
+          SLACK_MESSAGE: 'PR test execution failed :fire:'
+          SLACK_ICON: https://www.flaticon.com/free-icon/sad_13513643?related_id=13513643.PNG
+          SLACK_TITLE: Smoke tests were executed
+
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}

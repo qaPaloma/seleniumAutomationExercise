@@ -90,8 +90,8 @@
                 <version>${maven.compiler.version}</version>
                 <configuration>
                     <encoding>${project.build.sourceEncoding}</encoding>
-                    <source>${maven.compiler.source}</source>
-                    <target>${maven.compiler.source}</target>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
                     <includes>
                         <include>src/test/java</include>
                     </includes>
