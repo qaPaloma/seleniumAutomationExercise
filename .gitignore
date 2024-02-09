@@ -3,6 +3,10 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 
+notes/slack notifications
+notes/
+
+
 ### IntelliJ IDEA ###
 .idea
 .idea/modules.xml
