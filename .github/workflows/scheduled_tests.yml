@@ -9,11 +9,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Staring scheduled regression tests
+      - name: Starting scheduled regression tests
         uses: rtCamp/action-slack-notify@v2
         env:
           SLACK_USERNAME: qaBot
-          SLACK_MESSAGE: 'Staring scheduled regression test :beetle:'
+          SLACK_MESSAGE: 'Starting scheduled regression test :beetle:'
           SLACK_TITLE: Attention
           SLACK_ICON: https://cdn-icons-png.flaticon.com/512/13513/13513665.png
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
