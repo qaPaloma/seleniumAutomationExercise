@@ -13,11 +13,12 @@
         <!-- MAVEN COMPILER -->
         <maven.compiler.source>20</maven.compiler.source>
         <maven.compiler.source>20</maven.compiler.source>
-        <maven.compiler.version>3.11.0</maven.compiler.version>
+        <maven.compiler.version>3.12.1</maven.compiler.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <!--  -->
-        <selenium.version>4.16.1</selenium.version>
-        <slf4j.version>2.0.9</slf4j.version>
+        <selenium.version>4.17.0</selenium.version>
+        <junit.version>4.13.2</junit.version>
+        <slf4j.version>2.1.0-alpha1</slf4j.version>
         <apache.version>3.14.0</apache.version>
         <cucumber.version>7.15.0</cucumber.version>
         <surefire.version>3.2.5</surefire.version>
@@ -31,6 +32,56 @@
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
             <version>${selenium.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-chrome-driver</artifactId>
+            <version>${selenium.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-firefox-driver</artifactId>
+            <version>${selenium.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-edge-driver</artifactId>
+            <version>${selenium.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-chromium-driver</artifactId>
+            <version>${selenium.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-api</artifactId>
+            <version>${selenium.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-support</artifactId>
+            <version>${selenium.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- JUNIT -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
         </dependency>
 
         <!-- SLF4J -->
@@ -51,6 +102,7 @@
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
             <version>${apache.version}</version>
+            <scope>test</scope>
         </dependency>
 
         <!-- CUCUMBER -->
@@ -65,6 +117,7 @@
             <groupId>io.cucumber</groupId>
             <artifactId>cucumber-java</artifactId>
             <version>${cucumber.version}</version>
+            <scope>test</scope>
         </dependency>
 
         <!-- REPORTS -->
