@@ -24,7 +24,7 @@ public class LogoutSteps extends RunCucumberTest {
         homePage.clickLogoutButton();
     }
 
-    @Then("the user is taken to the Login page")
+    @Then("the user successfully logout from their account")
     public void pageCheck(){
         LoginSignupPage.pageCheck();
     }
