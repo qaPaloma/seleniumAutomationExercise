@@ -12,7 +12,6 @@ import support.ScreenshotUtils;
 
 public class LogoutSteps extends RunCucumberTest {
     LoginSignupPage loginSignupPage = new LoginSignupPage();
-    HomePage homePage = new HomePage();
 
     @Given("the user is logged in to the website")
     public void userLogged(){
@@ -21,7 +20,7 @@ public class LogoutSteps extends RunCucumberTest {
 
     @When ("the user clicks on the Logout button")
     public void logoutButton(){
-        homePage.clickLogoutButton();
+        HomePage.clickLogoutButton();
     }
 
     @Then("the user successfully logout from their account")

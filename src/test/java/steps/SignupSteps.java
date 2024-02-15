@@ -19,7 +19,6 @@ public class SignupSteps extends RunCucumberTest {
         LoginSignupPage.addSignupEmail();
     }
 
-
     @And("clicks the signup button")
     public void signupButton() {
         LoginSignupPage.clickSignupButton();
@@ -42,7 +41,6 @@ public class SignupSteps extends RunCucumberTest {
     public void createAccountButton() {
         createAccountPage.clickCreateButton();
     }
-
 
     @Then("the user sees a signup confirmation message")
     public void confirmationMessage() {

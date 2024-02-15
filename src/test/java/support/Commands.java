@@ -1,5 +1,6 @@
 package support;
 
+import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -7,6 +8,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import runner.RunCucumberTest;
 import java.time.Duration;
+import java.util.Random;
 
 public class Commands extends RunCucumberTest {
 
@@ -42,6 +44,7 @@ public class Commands extends RunCucumberTest {
         System.out.println("##########################");
         System.out.println("Will fill a field with a value");
         try {
+
             waitElement(element);
             getDriver().findElement(element).sendKeys(value);
         } catch (Exception error) {
@@ -60,46 +63,54 @@ public class Commands extends RunCucumberTest {
     }
 
     /*---------*/
+    public static String getRandomNumber(int numberOfDigits){
+        return RandomStringUtils.randomNumeric(numberOfDigits);
+    }
+
+    public static int getRandomNumber(int minValue, int maxValue){
+        Random random = new Random();
+
+        return random.nextInt(maxValue - minValue) + minValue;
+    }
+
     public static void selectOption(By element1, By element2){
         System.out.println("##########################");
         System.out.println("Will select an option");
-        String option = String.valueOf(UserDataUtils.getRandomNumber(1, 2));
+        String option = String.valueOf(getRandomNumber(1, 2));
         System.out.println("Selected option " + option);
         switch (option) {
             case "1":
                 clickButton(element1);
-                //String selected1 = element1.toString();
                 break;
             case "2":
                 clickButton(element2);
-                //String selected2 = element2.toString();
                 break;
             default:
                 System.out.println("**** Element not found");
         }
     }
 
-    /*---------*/
+    /*
     public static void dismissIFrame(By element1, By  element2){
         System.out.println("##########################");
         System.out.println("Will try to locate and dismiss add");
         try {
-            waitElement(element1);
+            waitLonger(60);
             getDriver().switchTo().frame(getDriver().findElement(element1));
-            waitElement(element2);
+            waitLonger(30);
             getDriver().findElement(element2).click();
             getDriver().switchTo().defaultContent();
         } catch (Exception error) {
             System.out.println("**** Add was not displayed");
         }
     }
+    */
 
     /*---------*/
     public static void checkElementIsCorrect(By elementActual, String valueExpected) {
         try {
             waitElement(elementActual);
             WebElement element = getDriver().findElement(elementActual);
-
             if (element.getAttribute("value") != null) {
                 // Method 1: Element with a "value" attribute. Ex.: Filled forms
                 String valueActual = element.getAttribute("value");

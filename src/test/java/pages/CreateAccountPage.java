@@ -5,13 +5,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import runner.RunBase;
 import static support.Commands.*;
-import static support.UserDataUtils.*;
 import static pages.LoginSignupPage.*;
+import static support.FakeDataAPI.*;
 
 public class CreateAccountPage extends RunBase {
 
     //region constants
-    public static final String URL = "https://automationexercise.com/login";
     private final By TITLE_MR_FIELD = By.id("id_gender1");
     private final By TITLE_MRS_FIELD = By.id("id_gender2");
     private static final By PASSWORD_FIELD = By.id("password");
@@ -24,7 +23,6 @@ public class CreateAccountPage extends RunBase {
     private final By LAST_NAME_FIELD = By.id("last_name");
     private final By COMPANY_FIELD = By.id("company");
     private final By ADDRESS1_FIELD = By.id("address1");
-    private final By ADDRESS2_FIELD = By.id("address2");
     private final By COUNTRY_FIELD = By.id("country");
     private final By STATE_FIELD = By.id("state");
     private final By CITY_FIELD = By.id("city");
@@ -35,7 +33,7 @@ public class CreateAccountPage extends RunBase {
     private final By NAME_ACTUAL = By.id("name");
     private final String EMAIL_EXPECTED = storeEmail();
     private final By EMAIL_ACTUAL = By.id("email");
-    public static final String GET_PASSWORD = getRandomPassword();
+    public static final String GET_PASSWORD = getPassword();
     //endregion
 
     public void pageCheck() {
@@ -43,6 +41,9 @@ public class CreateAccountPage extends RunBase {
     }
 
     public void checkUserName() {
+        System.out.println("##########################");
+        System.out.println("WILL VERIFY IF THE NAME IS CORRECT");
+        System.out.println(NAME_EXPECTED);
         checkElementIsCorrect(NAME_ACTUAL, NAME_EXPECTED);
     }
 
@@ -98,15 +99,11 @@ public class CreateAccountPage extends RunBase {
     }
 
     public void addCompanyName() {
-        fillField(COMPANY_FIELD, "Test Company INC.");
+        fillField(COMPANY_FIELD, getCompanyName());
     }
 
     public void addAddress1() {
-        fillField(ADDRESS1_FIELD, "Test St. 980 NY");
-    }
-
-    public void addAddress2() {
-        fillField(ADDRESS2_FIELD, "Test neighborhood");
+        fillField(ADDRESS1_FIELD, getAddress());
     }
 
     public void addCountry() {
@@ -116,21 +113,20 @@ public class CreateAccountPage extends RunBase {
     }
 
     public void addState() {
-        fillField(STATE_FIELD, "Test State");
+        fillField(STATE_FIELD, getState());
     }
 
     public void addCity() {
-        fillField(CITY_FIELD, "Testown");
+        fillField(CITY_FIELD, getCity());
     }
 
     public void addZipcode() {
-        fillField(ZIPCODE_FIELD, getRandomNumber(5));
+        fillField(ZIPCODE_FIELD, getZipCode());
     }
 
     public void addMobileNumber() {
-        fillField(MOBILE_NUMBER_FIELD, getRandomNumber(10));
+        fillField(MOBILE_NUMBER_FIELD, getPhoneNumber());
     }
-
 
     public void clickCreateButton() {
         clickButton(CREATE_ACCOUNT_BUTTON);
@@ -148,7 +144,6 @@ public class CreateAccountPage extends RunBase {
         addLastName();
         addCompanyName();
         addAddress1();
-        addAddress2();
         addCountry();
         addState();
         addCity();
